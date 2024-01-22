@@ -1,7 +1,4 @@
-/* Since you can't see the return on the console running "node index.js" with each return 
-we use a console.log too */
-
-// NOTE: Default value for .json file is db.json
+// NOTE: Default value for .json file is ./src/db.json
 
 const fs = require("fs");
 
@@ -124,91 +121,5 @@ class ProductManager {
     }
   }
 }
-
-// async function test(path) {
-//   // Instance creation and tests
-//   console.log(" ")
-//   console.log("**********************************");
-//   console.log(
-//     "note: These test work according to the commentary when running it for the first time. Since the db is different after the first time running it, the comments wont reflect on the action of the function."
-//   );
-//   console.log("**********************************");
-//   console.log(" ")
-
-//   const newProdManager = new ProductManager(path);
-
-//   console.log("**********************************");
-//   console.log("getProducts shows empty array");
-//   await newProdManager.getProducts();
-
-//   console.log("**********************************");
-//   console.log("addProduct adds product");
-//   const product1Id = await newProdManager.addProduct({
-//     title: "producto prueba",
-//     description: "Este es un producto prueba",
-//     price: 200,
-//     thumbnail: "Sin imagen",
-//     code: "abc123",
-//     stock: 25,
-//   });
-
-//   console.log("**********************************");
-//   console.log("addProduct adds second product");
-//   const product2Id = await newProdManager.addProduct({
-//     title: "producto prueba 2",
-//     description: "Este es un producto prueba 2",
-//     price: 200,
-//     thumbnail: "Sin imagen",
-//     code: "abc456",
-//     stock: 30,
-//   });
-
-//   console.log("**********************************");
-//   console.log("addProduct doesn't add invalid product (description missing)");
-//   await newProdManager.addProduct({
-//     title: "producto prueba 3",
-//     price: 200,
-//     thumbnail: "Sin imagen",
-//     code: "def456",
-//     stock: 30,
-//   });
-
-//   console.log("**********************************");
-//   console.log("addProduct doesnt add product with existing code in products");
-//   await newProdManager.addProduct({
-//     title: "producto prueba",
-//     description: "Este es un producto prueba",
-//     price: 200,
-//     thumbnail: "Sin imagen",
-//     code: "abc123",
-//     stock: 25,
-//   });
-
-//   console.log("**********************************");
-//   console.log("getProducts shows product added");
-//   await newProdManager.getProducts();
-
-//   console.log("**********************************");
-//   console.log("getProductById returns product by id");
-//   await newProdManager.getProductById(product1Id);
-
-//   console.log("**********************************");
-//   console.log("getProductById doesnt return if id is not found in products");
-//   await newProdManager.getProductById("asdasdasdasd");
-
-//   console.log("**********************************");
-//   console.log("updateProduct updates field title of product");
-//   await newProdManager.updateProductById(product1Id, {
-//     title: "Titulo modificado",
-//   });
-
-//   console.log("**********************************");
-//   console.log("delete product by id");
-//   await newProdManager.deleteProductById(product2Id);
-//   console.log("products after deletion:");
-//   await newProdManager.getProducts();
-// }
-
-// test("./db.json");
 
 module.exports = ProductManager;
